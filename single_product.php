@@ -1,12 +1,4 @@
 <?php
-if (isset($_GET['login_success']) && $_GET['login_success'] == 1) {
-    echo "<script>alert('Logged in!')</script>";
-    echo "<script>window.location.assign('index.php')</script>";
-}
-if (isset($_GET['logout_success']) && $_GET['logout_success'] == 1) {
-    echo "<script>alert('Logged out!')</script>";
-    echo "<script>window.location.assign('index.php')</script>";
-}
 session_start();
 if (!empty($_SESSION['cart'])) {
     $printCount = count($_SESSION['cart']);
@@ -28,7 +20,7 @@ else {
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>OCS - Home</title>
+    <title>OCS - Product Details</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link href="fonts/circular-std/style.css" rel="stylesheet">
@@ -57,10 +49,10 @@ else {
                 <div class="collapse navbar-collapse " id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto navbar-right-top">
                         <li class="nav-item">
-                            <a class="nav-link active" href="index.php">Home</a>
+                            <a class="nav-link" href="index.php">Home</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link" href="#" id="navbarDropdownMenuLink1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Shop</a>
+                            <a class="nav-link active" href="#" id="navbarDropdownMenuLink1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Shop</a>
                             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink1">
                             <?php
                             require_once('config.php');
@@ -110,103 +102,80 @@ else {
         <!-- ============================================================== -->
         <!-- <div class="dashboard-wrapper"> -->
             <div class="container-fluid dashboard-content">    
+                
                 <div class="row">
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-                            <div class="carousel-inner rounded">
-                                <div class="carousel-item active">
-                                    <img class="d-block w-100" src="uploads/1.jpg" alt="First slide">
-                                    <div class="carousel-caption d-md-block pb-5">
-                                        <h3 class="text-white">GOOD FOOD, GOOD LIFE</h3>
-                                        <p>Cakes are special, every celebration ends with something sweet like a cake and people remember it's all about the memories.</p>
-                                        <a href="about.php" class="btn btn-rounded btn-outline-light">Read More</a>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <img class="d-block w-100" src="uploads/2.jpg" alt="Second slide">
-                                    <div class="carousel-caption d-md-block pb-5">
-                                        <h3 class="text-white">The cake we bake with love</h3>
-                                        <p>Take the shredded pieces of your life and bake a master cake out of it.</p>
-                                        <a href="about.php" class="btn btn-rounded btn-outline-light">Read More</a>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <img class="d-block w-100" src="uploads/3.jpg" alt="Third slide">
-                                    <div class="carousel-caption d-md-block pb-5">
-                                        <h3 class="text-white">Love at first bite</h3>
-                                        <p>You can’t be down when you are holding a cupcake.</p>
-                                        <a href="about.php" class="btn btn-rounded btn-outline-light">Read More</a>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <img class="d-block w-100" src="uploads/5.jpg" alt="Fourth slide">
-                                    <div class="carousel-caption d-md-block pb-5">
-                                        <h3 class="text-white">A party without cake is really just a meeting.</h3>
-                                        <p>Cakes are special, every celebration ends with something sweet like a cake and people remember it's all about the memories.</p>
-                                        <a href="about.php" class="btn btn-rounded btn-outline-light">Read More</a>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <img class="d-block w-100" src="uploads/6.jpg" alt="Fifth slide">
-                                    <div class="carousel-caption d-md-block pb-5">
-                                        <h3 class="text-white">Eat a cake.</h3>
-                                        <p>Cakes are special, every celebration ends with something sweet like a cake and people remember it's all about the memories.</p>
-                                        <a href="about.php" class="btn btn-rounded btn-outline-light">Read More</a>
-                                    </div>
-                                </div>
-                                <div class="carousel-item">
-                                    <img class="d-block w-100" src="uploads/7.jpg" alt="Sixth slide">
-                                    <div class="carousel-caption d-md-block pb-5">
-                                        <h3 class="text-white">View our categories.</h3>
-                                        <p>Cakes are special, every celebration ends with something sweet like a cake and people remember it's all about the memories.</p>
-                                        <a href="about.php" class="btn btn-rounded btn-outline-light">Read More</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                                   <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                         <span class="sr-only">Previous</span>   </a>
-                            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                                       <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                   <span class="sr-only">Next</span>  </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row m-5">
-                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 text-center">
-                        <h1>Our Features</h1>
-                    </div>
-                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
-                        <div class="card text-center p-3">
-                            <div class="card-body">
-                                <h1 class="card-title"><i class="fas fa-thumbs-up"></i></h1>
-                                <h3 class="card-title">Quality</h3>
-                                <p class="card-text">Our very first priority is the quality we never compromised in the quality of our bakery products.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
-                        <div class="card text-center p-3">
-                            <div class="card-body">
-                                <h1 class="card-title"><i class="fas fa-birthday-cake"></i></h1>
-                                <h3 class="card-title">Fresh & natural</h3>
-                                <p class="card-text">Our every product is fresh and made with natural ingredients we do not use the artificial food ingredient in our products.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
-                        <div class="card text-center p-3">
-                            <div class="card-body">
-                                <h1 class="card-title"><i class="fas fa-shipping-fast"></i></h1>
-                                <h3 class="card-title">Free delivery</h3>
-                                <p class="card-text">We provide free delivery to our customers. We deliver in 1 hr from the time customer order the product.</p>
+                        <div class="page-header">
+                            <h2 class="pageheader-title">Product</h2>
+                            <p class="pageheader-text">Proin placerat ante duiullam scelerisque a velit ac porta, fusce sit amet vestibulum mi. Morbi lobortis pulvinar quam.</p>
+                            <div class="page-breadcrumb">
+                                <nav aria-label="breadcrumb">
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item"><a href="index.php" class="breadcrumb-link">Home</a></li>
+                                        <li class="breadcrumb-item active" aria-current="page">Product details</li>
+                                    </ol>
+                                </nav>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="row mx-5">
+
+                    <?php
+                    require_once('config.php');
+                    $product_id = $_GET['product_id'];
+                    $select = "SELECT * FROM cake_shop_product where product_id = $product_id";
+                    $query = mysqli_query($conn, $select);
+                    $res = mysqli_fetch_assoc($query);
+                    ?>
+                    <div class="offset-xl-2 col-xl-8 col-lg-12 col-md-12 col-sm-12 col-12">
+                        <div class="row">
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 pr-xl-0 pr-lg-0 pr-md-0 m-b-30">
+                                <div class="product-slider p-4">
+                                    <div id="carouselExampleIndicators" class="product-carousel carousel slide" data-ride="carousel">
+                                        <?php
+                                        $file_array = explode(', ', $res['product_image']);
+                                        ?>
+                                        <div class="carousel-inner">
+                                            <?php
+                                            for ($i = 0; $i < count($file_array); $i++) {
+                                            ?>
+                                            <div class="carousel-item <?php if($i == 0) {echo 'active';} ?>">
+                                                <img class="d-block w-100" src="uploads/<?php echo $file_array[$i];?>" alt="slide<?php echo $i;?>">
+                                            </div>
+                                            <?php } ?>
+                                        </div>
+                                        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                            <span class="sr-only">Previous</span>
+                                        </a>
+                                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                            <span class="sr-only">Next</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 pl-xl-0 pl-lg-0 pl-md-0 border-left m-b-30 d-flex">
+                                <div class="product-details p-4">
+                                    <div class="border-bottom pb-3 mb-3">
+                                        <h2 class="mb-3"><?php echo $res['product_name'];?></h2>
+                                        <h3 class="mb-0 text-primary">Rs. <?php echo $res['product_price'];?></h3>
+                                    </div>
+                                    <div class="product-description">
+                                        <h4 class="mb-1">Descriptions</h4>
+                                        <p><?php echo $res['product_description'];?></p>
+                                        <button onclick="add_cart(<?php echo $res['product_id'];?>)" class="btn btn-primary btn-block btn-lg">Add to Cart</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row m-5">
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 text-center">
                         <h1>Our Categories</h1>
                     </div>
@@ -234,22 +203,6 @@ else {
                     </div>
                 </div>
 
-                <div class="row m-5 hero-image2 rounded">
-                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 p-3 hero-text">
-                        <h1 class="text-dark">Who We Are</h1>
-                        <p class="text-dark px-5">We are bakers, we bake the piece of joy. We believe cake and baked goods are an expression of love.</p>
-                        <p class="text-dark px-5">We bake from scratch daily using traditional methods and quality ingredients. There are some things in life you just can't fake, and dang good cake? That's one of them. We use organic whole milk, cage-free eggs, loads of real fruit, pure extracts, amazingly delicious chocolate, and lots and lots of real butter to create simply delicious treats the old-fashioned way.</p>
-                        <a href="about.php" class="btn btn-rounded btn-success">Read More</a>
-                    </div>
-                </div>
-
-                <div class="row mx-5 hero-image rounded">
-                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 p-3 hero-text">
-                        <h1 class="text-white">Always happy to hear from you.</h1>
-                        <a href="contact.php" class="btn btn-rounded btn-brand">Contact Us</a>
-                    </div>
-                </div>
-
             </div>
             <!-- ============================================================== -->
             <!-- footer -->
@@ -258,7 +211,7 @@ else {
                 <div class="container-fluid">
                     <div class="row">
                         <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
-                            Copyright © 2023 Concept. All rights reserved. Dashboard by <a href="https://colorlib.com/wp/">Colorlib</a>.
+                            Copyright © 2018 Concept. All rights reserved. Dashboard by <a href="https://colorlib.com/wp/">Colorlib</a>.
                         </div>
                         <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
                             <div class="text-md-right footer-links d-none d-sm-block">
@@ -292,6 +245,18 @@ else {
                 }
             })
         });
+        function add_cart(product_id) {
+                $.ajax({
+                    url:'fetch_cart.php',
+                    data:'id='+product_id,
+                    method:'get',
+                    dataType:'json',
+                    success:function(cart){
+                        console.log(cart);
+                        $('.badge').html(cart.length);
+                    }
+                });
+            }
     </script>
 </body>
  
